@@ -1,0 +1,40 @@
+.weatherListCard {
+    width: 100vw;
+    padding-top: 20px;
+    overflow-x: auto;
+    display: flex;
+    scrollbar-width: none;
+    /* Hacer que la barra de desplazamiento sea delgada */
+    white-space: nowrap;
+}
+
+.weatherListCard::-webkit-scrollbar {
+    height: 8px;
+    display: none;
+}
+
+
+.weather-day {
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 10px;
+    background-color: var(--blue);
+}
+
+.weather-day-block {
+    min-width: 150px;
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--grey);
+    background-color: var(--white);
+    margin-right: 10px;
+}
+
+.weather-day-block h3,
+.weather-day-block p {
+    padding: 5px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}

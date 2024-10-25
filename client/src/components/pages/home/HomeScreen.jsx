@@ -1,10 +1,15 @@
 import React from 'react';
+import WeatherDayList from '../../molecules/weather/WeatherDayList';
+import WeatherReport from '../../molecules/weather/WeatherReport';
+import WeatherSearch from '../../molecules/weather/WeartherSearch';
 
 const HomeScreen = () => {
 
     return (
         <main>
-            <h1>HomeScreen</h1>
+            <WeatherReport />
+            <WeatherDayList />
+            <WeatherSearch />
         </main>
     )
 }

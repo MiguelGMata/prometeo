@@ -1,0 +1,59 @@
+.weatherSearch {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+}
+
+.input-container input {
+    padding-right: 40px;
+    height: 40px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.input-container button {
+    position: absolute;
+    right: 10px;
+    /* Ajusta la posición horizontal */
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #888;
+    /* Color de la lupa */
+    font-size: 16px;
+}
+
+.input-container button i {
+    padding: 10px;
+    pointer-events: none;
+    /* Evita problemas al hacer clic */
+}
+
+.weatherSearch-content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: var(--white);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+@media(min-width: 768px) {
+    .input-container {
+        width: 30%;
+    }
+
+}

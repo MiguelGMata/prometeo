@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "proxy": "https://libretranslate.de",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
