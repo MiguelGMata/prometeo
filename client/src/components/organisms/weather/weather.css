@@ -1,3 +1,45 @@
-.weather-content {
-    background-color: brown;
+.weather {
+    width: 100%;
+    padding-bottom: 50px;
+    background-color: var(--yellow);
+}
+
+.weather-content.sunny {
+    background-image: url('/sunny.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background 0.5s ease;
+}
+
+.weather-content.cloudy {
+    background-image: url('/Cloudy.gif');
+    background-size: 100% 110%;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background 0.5s ease;
+}
+
+.weather-content.rainy {
+    background-image: url('/path/to/rainy.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background 0.5s ease;
+}
+
+.weather-content.snowy {
+    background-image: url('/path/to/snowy.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background 0.5s ease;
+}
+
+.weather-content.stormy {
+    background-image: url('/path/to/stormy.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background 0.5s ease;
 }

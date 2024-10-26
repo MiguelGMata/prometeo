@@ -9,6 +9,7 @@
     overflow: hidden;
     transition: max-height 0.5s ease-in-out;
     background-color: var(--blue);
+    z-index: 1000;
 }
 
 .navbar-label.open {

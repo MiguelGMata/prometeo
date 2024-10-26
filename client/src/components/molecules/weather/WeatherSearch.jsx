@@ -27,7 +27,9 @@ const WeatherReport = ({ position }) => {
         "Clear": "Clair",
         "Mist": "Brume",
         "Partly Cloudy": "Partiellement nuageux",
-        "Light rain shower": "Averse de pluie légère"
+        "Light rain shower": "Averse de pluie légère",
+        "Patchy rain nearby": "Pluie éparse à proximité",
+        "Patchy light rain": "Pluie légère et éparse",
     };
     const getTranslatedCondition = (condition) => {
         return translateCondition[condition] || condition;
@@ -47,7 +49,7 @@ const WeatherReport = ({ position }) => {
                 const translated = getTranslatedCondition(data.current.condition.text);
                 setTranslatedCondition(translated);
             } catch (error) {
-                console.log('Vous ne pourrez pas obtenir des informations sur la météo.');
+                console.log("Vous ne pourrez pas obtenir d'informations météorologiques tant que vous n'aurez pas saisi une ville.");
             }
         }
         fetchWeather()
@@ -60,7 +62,7 @@ const WeatherReport = ({ position }) => {
                     type="text"
                     value={location}
                     onChange={handleLocationChange}
-                    placeholder="Saisir la ville"
+                    placeholder="Saisir la météo par ville"
                 />
                 <button onClick={() => setLocation(location)}>
                     <i className="fa fa-search"><FaSearch /></i> {/* Ícono de lupa */}

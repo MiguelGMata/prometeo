@@ -19,6 +19,8 @@ const WeatherReport = ({ position, weatData }) => {
         "Clear": "Clair",
         "Mist": "Brume",
         "Partly Cloudy": "Partiellement nuageux",
+        "Patchy rain nearby": "Pluie éparse à proximité",
+        "Patchy light rain": "Pluie légère et éparse",
     };
     const getTranslatedCondition = (condition) => {
         return translateCondition[condition] || condition;
