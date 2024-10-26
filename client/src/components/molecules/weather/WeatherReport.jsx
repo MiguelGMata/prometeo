@@ -3,10 +3,10 @@ import { weatherGet } from '../../services/axios';
 import WeatherCard from '../card/WeatherCard';
 import './weatherReport.css';
 
-const WeatherReport = () => {
+const WeatherReport = ({ latitud, longitud, position }) => {
     const [weatherData, setWeatherData] = useState(null);
     const [translatedCondition, setTranslatedCondition] = useState('');
-    const location = 'Paris';
+    const location = position;
     const translateCondition = {
         "Sunny": "Ensoleillé",
         "Partly cloudy": "Partiellement nuageux",

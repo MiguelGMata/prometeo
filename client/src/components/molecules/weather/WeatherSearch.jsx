@@ -1,19 +1,19 @@
 import { useState, useEffect } from 'react';
 import { weatherGet } from '../../services/axios';
-import { FaArrowDown, FaArrowUp, FaSearch } from "react-icons/fa";
+import { FaArrowDown, FaArrowUp, FaSearch, FaMapMarkerAlt } from "react-icons/fa";
 import Card from '../../atoms/card/Card';
 import Image from '../../atoms/image/Image';
 import GoogleMap from '../map/GoogleMap';
-import './weather.css';
+import './weatherSearch.css';
 
 
-const WeatherReport = () => {
+const WeatherReport = ({ latitud, longitud, position }) => {
     const [weatherData, setWeatherData] = useState(null);
     const [filter, setFilter] = useState(" ")
     const [translatedCondition, setTranslatedCondition] = useState('');
     const [error, setError] = useState(null);
     const [location, setLocation] = useState('');
-    const [position, setPosition] = useState('Paris');
+
     const translateCondition = {
         "Sunny": "Ensoleillé",
         "Partly cloudy": "Partiellement nuageux",
@@ -67,10 +67,12 @@ const WeatherReport = () => {
                 </button>
             </div>
             {error && <p>{error}</p>}
-            {weatherData && (
-                <div className='weatherSearch-content'>
+            <div className='weatherSearch-content'>
+                {weatherData && (
+
                     <Card >
-                        <h3>{weatherData.location.name} - {weatherData.location.country}</h3>
+                        <h2> <FaMapMarkerAlt /></h2>
+                        <h2>{weatherData.location.name} - {weatherData.location.country}</h2>
                         <h1>{Math.round(weatherData.current.temp_c)}°</h1>
 
                         {weatherData.forecast && weatherData.forecast.forecastday && (
@@ -84,9 +86,10 @@ const WeatherReport = () => {
                             </div>
                         )}
                     </Card>
-                </div>
-            )}
-            <GoogleMap filterPosition={weatherData ? weatherData : filter} />
+
+                )}
+                <GoogleMap filterPosition={weatherData ? weatherData : filter} />
+            </div>
         </div>
     )
 }

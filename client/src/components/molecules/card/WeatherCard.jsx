@@ -27,7 +27,6 @@ const WeatherCard = ({ weatherData, translatedCondition }) => {
                             </div>
                         )}
                     </Card>
-
                 </div>
             )}
         </div>
