@@ -1,28 +1,39 @@
 import { useState, useEffect } from 'react';
-import { weatherGet } from '../../services/axios';
 import WeatherListCard from '../card/WeatherListCard';
 import './weatherDayList.css';
 
-const WeatherDayList = ({ position }) => {
+const WeatherDayList = ({ position, weatData }) => {
     const [forecast, setForecast] = useState(null);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         const fetchWeather = async () => {
             try {
-                const data = await weatherGet(position);
-                const filteredData = data.forecast.forecastday.map((hour) => hour.hour);
-                setForecast(filteredData);
-
+                const filteredData = weatData?.forecast?.forecastday;
+                if (filteredData) {
+                    const filtered = filteredData.map((hour) => hour.hour);
+                    setForecast(filtered);
+                }
             } catch (error) {
                 console.log('Erreur : ', error)
             }
         }
         fetchWeather()
-    }, [position])
+    }, [position, weatData])
 
     return (
         <div className='weatherDayList-content'>
-            <WeatherListCard forecast={forecast} />
+            {error ? (
+                <p className="error-message">{error}</p>
+            ) : forecast ? (
+                <>
+                    <WeatherListCard forecast={forecast} />
+                </>
+            ) : (
+                <>
+                    <p className="loading-message">Obtenir l'emplacement actuel...</p>
+                </>
+            )}
         </div>
     )
 }

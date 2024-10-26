@@ -94,5 +94,3 @@ const WeatherReport = ({ position }) => {
     )
 }
 export default WeatherReport;
-
-/**       */

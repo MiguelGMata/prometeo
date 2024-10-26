@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { weatherGet } from '../../services/axios';
 import WeatherDayList from '../../molecules/weather/WeatherDayList';
 import WeatherReport from '../../molecules/weather/WeatherReport';
 import WeatherSearch from '../../molecules/weather/WeatherSearch';
@@ -6,6 +7,7 @@ const apiURL = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
 import './weather.css';
 
 const Weather = () => {
+    const [weatherData, setWeatherData] = useState(null);
     const [currentLocation, setCurrentLocation] = useState(null);
     const [cityName, setCityName] = useState('');
     const [error, setError] = useState(null);
@@ -27,6 +29,7 @@ const Weather = () => {
             { enableHighAccuracy: true }
         );
     }, []);
+
 
     const fetchCityName = async (latitude, longitude) => {
         const apiKey = apiURL;
@@ -57,23 +60,32 @@ const Weather = () => {
         }
     };
 
+    useEffect(() => {
+        const fetchWeather = async () => {
+            try {
+                const data = await weatherGet(cityName);
+                setWeatherData(data);
+            } catch (error) {
+                console.log('Erreur : ', error)
+            }
+        }
+        fetchWeather()
+    }, [cityName])
+
     return (
         <div className='weather-content'>
             {error ? (
                 <p className="error-message">{error}</p>
             ) : currentLocation ? (
                 <>
-                    <WeatherReport position={cityName} />
-                    <WeatherDayList position={cityName} />
-                    <WeatherSearch position={cityName} />
+                    <WeatherReport position={cityName} weatData={weatherData} />
+                    <WeatherDayList position={cityName} weatData={weatherData} />
+                    <WeatherSearch position={cityName} weatherData={weatherData} />
                 </>
             ) : (
 
                 <>
                     <p className="loading-message">Obtenir l'emplacement actuel...</p>
-                    <WeatherReport position="Paris" />
-                    <WeatherDayList position="Paris" />
-                    <WeatherSearch position="Paris" />
                 </>
 
             )}
