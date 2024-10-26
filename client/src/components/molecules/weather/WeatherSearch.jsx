@@ -7,7 +7,7 @@ import GoogleMap from '../map/GoogleMap';
 import './weatherSearch.css';
 
 
-const WeatherReport = ({ latitud, longitud, position }) => {
+const WeatherReport = ({ position }) => {
     const [weatherData, setWeatherData] = useState(null);
     const [filter, setFilter] = useState(" ")
     const [translatedCondition, setTranslatedCondition] = useState('');
@@ -51,7 +51,7 @@ const WeatherReport = ({ latitud, longitud, position }) => {
             }
         }
         fetchWeather()
-    }, [location])
+    }, [location, position])
 
     return (
         <div className='weatherSearch'>

@@ -3,15 +3,13 @@ import { weatherGet } from '../../services/axios';
 import WeatherListCard from '../card/WeatherListCard';
 import './weatherDayList.css';
 
-const WeatherDayList = () => {
+const WeatherDayList = ({ position }) => {
     const [forecast, setForecast] = useState(null);
-    const location = 'Paris';
-
 
     useEffect(() => {
         const fetchWeather = async () => {
             try {
-                const data = await weatherGet(location);
+                const data = await weatherGet(position);
                 const filteredData = data.forecast.forecastday.map((hour) => hour.hour);
                 setForecast(filteredData);
 
@@ -20,7 +18,7 @@ const WeatherDayList = () => {
             }
         }
         fetchWeather()
-    }, [location])
+    }, [position])
 
     return (
         <div className='weatherDayList-content'>

@@ -22,7 +22,7 @@ const Weather = () => {
             },
             (error) => {
                 console.error("Erreur lors de l'obtention de la position :", error);
-                setError("« Impossible d'obtenir l'emplacement. Veuillez autoriser l'accès à l'emplacement.");
+                setError("Impossible d'obtenir l'emplacement. Veuillez autoriser l'accès à l'emplacement.");
             },
             { enableHighAccuracy: true }
         );
@@ -63,13 +63,20 @@ const Weather = () => {
                 <p className="error-message">{error}</p>
             ) : currentLocation ? (
                 <>
-                    <WeatherReport latitud={currentLocation.lat} longitud={currentLocation.lon} position={cityName} />
+                    <WeatherReport position={cityName} />
+                    <WeatherDayList position={cityName} />
+                    <WeatherSearch position={cityName} />
                 </>
             ) : (
-                <p className="loading-message">Obtenir l'emplacement actuel...</p>
+
+                <>
+                    <p className="loading-message">Obtenir l'emplacement actuel...</p>
+                    <WeatherReport position="Paris" />
+                    <WeatherDayList position="Paris" />
+                    <WeatherSearch position="Paris" />
+                </>
+
             )}
-            <WeatherDayList />
-            <WeatherSearch latitud={currentLocation.lat} longitud={currentLocation.lon} position={cityName} />
         </div>
     );
 };
