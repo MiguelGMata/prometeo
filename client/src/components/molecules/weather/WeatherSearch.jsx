@@ -3,13 +3,17 @@ import { weatherGet } from '../../services/axios';
 import { FaArrowDown, FaArrowUp, FaSearch } from "react-icons/fa";
 import Card from '../../atoms/card/Card';
 import Image from '../../atoms/image/Image';
+import GoogleMap from '../map/GoogleMap';
 import './weather.css';
+
 
 const WeatherReport = () => {
     const [weatherData, setWeatherData] = useState(null);
+    const [filter, setFilter] = useState(" ")
     const [translatedCondition, setTranslatedCondition] = useState('');
     const [error, setError] = useState(null);
     const [location, setLocation] = useState('');
+    const [position, setPosition] = useState('Paris');
     const translateCondition = {
         "Sunny": "Ensoleillé",
         "Partly cloudy": "Partiellement nuageux",
@@ -32,11 +36,14 @@ const WeatherReport = () => {
         setLocation(e.target.value);
     };
 
+
     useEffect(() => {
         const fetchWeather = async () => {
             try {
                 const data = await weatherGet(location);
                 setWeatherData(data);
+                const dataPosition = await weatherGet(position);
+                setFilter(dataPosition)
                 const translated = getTranslatedCondition(data.current.condition.text);
                 setTranslatedCondition(translated);
             } catch (error) {
@@ -79,7 +86,10 @@ const WeatherReport = () => {
                     </Card>
                 </div>
             )}
+            <GoogleMap filterPosition={weatherData ? weatherData : filter} />
         </div>
     )
 }
 export default WeatherReport;
+
+/**       */
