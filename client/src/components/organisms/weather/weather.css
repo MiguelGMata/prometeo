@@ -37,7 +37,7 @@
     }
 
     50% {
-        background-position: 100% center;
+        background-position: 1000% center;
     }
 
     100% {
@@ -57,4 +57,11 @@
     background-image: url('https://cdn.pixabay.com/animation/2023/03/19/02/34/02-34-11-741_512.gif');
     background-position: center;
 
+}
+
+@media(max-width: 767px) {
+    .weather-content.cloudy {
+        background-size: 80% 10%;
+
+    }
 }
