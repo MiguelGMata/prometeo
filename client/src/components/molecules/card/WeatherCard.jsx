@@ -6,12 +6,12 @@ import './weatherCard.css';
 
 
 const WeatherCard = ({ weatherData, translatedCondition }) => {
-    console.log(weatherData)
+
     return (
         <div className='weatherCard'>
             {weatherData && (
                 <div className='weatherCard-content'>
-                    <Card >
+                    <Card className='cardTrans'>
                         <h2>Ma position</h2>
                         <h3>{weatherData.location.name}  <FaMapMarkerAlt /></h3>
                         <h1>{Math.round(weatherData.current.temp_c + 5)}°</h1>

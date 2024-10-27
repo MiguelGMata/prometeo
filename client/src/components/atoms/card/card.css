@@ -14,7 +14,11 @@
     max-width: 500px;
 }
 
-.cardTrans {
-    min-width: 300px;
-    min-height: 300px;
+
+
+@media (max-width: 767px) {
+    .cardTrans {
+        max-width: 250px;
+        min-height: 200px;
+    }
 }

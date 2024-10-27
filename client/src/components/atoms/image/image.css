@@ -5,8 +5,8 @@
 }
 
 .image-position {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     border-radius: 100px;
     background-color: aliceblue;
     padding: 0%;
@@ -15,6 +15,11 @@
 @media (min-width: 768px) {
     .image-logo {
         width: 100px;
+        height: 80px;
+    }
+
+    .image-position {
+        width: 80px;
         height: 80px;
     }
 }
