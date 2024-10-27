@@ -3,6 +3,7 @@ import { weatherGet } from '../../services/axios';
 import WeatherDayList from '../../molecules/weather/WeatherDayList';
 import WeatherReport from '../../molecules/weather/WeatherReport';
 import WeatherSearch from '../../molecules/weather/WeatherSearch';
+import WeatherDayWeek from '../../molecules/card/WeatherCardWeek';
 const apiURL = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
 import './weather.css';
 const getWeatherClass = (condition) => {
@@ -93,6 +94,7 @@ const Weather = () => {
                             <div className={`weather-content ${weatherClass}`}>
                                 <WeatherReport position={cityName} weatData={weatherData} />
                                 <WeatherDayList position={cityName} weatData={weatherData} />
+                                <WeatherDayWeek position={cityName} weatData={weatherData} />
 
                             </div>
                             <WeatherSearch position={cityName} weatData={weatherData} />

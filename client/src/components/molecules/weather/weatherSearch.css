@@ -20,24 +20,23 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 10px;
+    font-size: 1.5rem;
 }
 
 .input-container button {
+    /* Ajusta lupa*/
     position: absolute;
     right: 10px;
-    /* Ajusta la posición horizontal */
     background: none;
     border: none;
     cursor: pointer;
     color: #888;
-    /* Color de la lupa */
-    font-size: 16px;
+    font-size: 20px;
 }
 
 .input-container button i {
     padding: 10px;
     pointer-events: none;
-    /* Evita problemas al hacer clic */
 }
 
 .weatherSearch-content {

@@ -11,7 +11,7 @@ const axiosInstance = axios.create({
 
 export const weatherGet = async (location) => {
     try {
-        const response = await axiosInstance.get(`/forecast.json?key=${apiKey}&q=${location}&days=1`)
+        const response = await axiosInstance.get(`/forecast.json?key=${apiKey}&q=${location}&days=7`)
         return (response.data)
     } catch (error) {
         console.log('erreur :', error)

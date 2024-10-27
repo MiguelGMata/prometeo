@@ -26,10 +26,12 @@ const WeatherReport = ({ position }) => {
         "Snow": "Neige",
         "Clear": "Clair",
         "Mist": "Brume",
+        "Fog": "Brouillard",
         "Partly Cloudy": "Partiellement nuageux",
         "Light rain shower": "Averse de pluie légère",
         "Patchy rain nearby": "Pluie éparse à proximité",
         "Patchy light rain": "Pluie légère et éparse",
+        "Moderate or heavy rain with thunder": "Pluie modérée ou forte avec tonnerre",
     };
     const getTranslatedCondition = (condition) => {
         return translateCondition[condition] || condition;
@@ -42,12 +44,14 @@ const WeatherReport = ({ position }) => {
     useEffect(() => {
         const fetchWeather = async () => {
             try {
-                const data = await weatherGet(location);
-                setWeatherData(data);
-                const dataPosition = await weatherGet(position);
-                setFilter(dataPosition)
-                const translated = getTranslatedCondition(data.current.condition.text);
-                setTranslatedCondition(translated);
+                if (location) {
+                    const data = await weatherGet(location);
+                    setWeatherData(data);
+                    const dataPosition = await weatherGet(position);
+                    setFilter(dataPosition)
+                    const translated = getTranslatedCondition(data.current.condition.text);
+                    setTranslatedCondition(translated);
+                }
             } catch (error) {
                 console.log("Vous ne pourrez pas obtenir d'informations météorologiques tant que vous n'aurez pas saisi une ville.");
             }

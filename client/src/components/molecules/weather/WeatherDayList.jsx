@@ -15,7 +15,7 @@ const WeatherDayList = ({ position, weatData }) => {
                     setForecast(filtered);
                 }
             } catch (error) {
-                console.log('Erreur : ', error)
+                setError('Erreur : ', error)
             }
         }
         fetchWeather()

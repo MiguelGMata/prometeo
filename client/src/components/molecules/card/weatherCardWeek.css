@@ -1,0 +1,58 @@
+.weatherCardWeek {
+    background-color: var(--yellow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.weatherCardWeek-content {
+    padding: 10px;
+}
+
+.weatherCardWeek-content h1 {
+    color: var(--white);
+    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.weatherCardWeek-content ul {
+    padding: 20px;
+    list-style: none;
+    border: 1px solid var(--white);
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: left;
+    background-color: var(--blue);
+    width: 100vw;
+}
+
+.weatherCardWeek-content li {
+    color: var(--white);
+    font-size: 1.2rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+.weatherCardWeek-week-day {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    width: 100%;
+}
+
+.weatherCardWeek-week-day:nth-child(1) {
+    justify-content: left;
+
+}
+
+.weatherCardWeek-week-day:nth-child(2) {
+    justify-content: space-around;
+
+}
+
+@media(min-width: 768px) {
+    .weatherCardWeek-content ul {
+        width: 50vw;
+    }
+}

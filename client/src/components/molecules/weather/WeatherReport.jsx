@@ -18,9 +18,11 @@ const WeatherReport = ({ position, weatData }) => {
         "Snow": "Neige",
         "Clear": "Clair",
         "Mist": "Brume",
+        "Fog": "Brouillard",
         "Partly Cloudy": "Partiellement nuageux",
         "Patchy rain nearby": "Pluie éparse à proximité",
         "Patchy light rain": "Pluie légère et éparse",
+        "Moderate or heavy rain with thunder": "Pluie modérée ou forte avec tonnerre",
     };
     const getTranslatedCondition = (condition) => {
         return translateCondition[condition] || condition;
