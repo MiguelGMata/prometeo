@@ -7,7 +7,7 @@ import GoogleMap from '../map/GoogleMap';
 import './weatherSearch.css';
 
 
-const WeatherReport = ({ position }) => {
+const WeatherReport = ({ position, weatData }) => {
     const [weatherData, setWeatherData] = useState(null);
     const [filter, setFilter] = useState(" ")
     const [translatedCondition, setTranslatedCondition] = useState('');
@@ -94,7 +94,7 @@ const WeatherReport = ({ position }) => {
                     </Card>
 
                 )}
-                <GoogleMap filterPosition={weatherData ? weatherData : filter} />
+                <GoogleMap filterPosition={weatherData ? weatherData : filter} positionActual={weatData} />
             </div>
         </div>
     )

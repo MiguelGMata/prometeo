@@ -7,9 +7,10 @@ const containerStyle = {
     height: '500px',
 };
 
-const GoogleMapComponent = ({ filterPosition }) => {
-    const latitud = filterPosition && filterPosition.location ? filterPosition.location.lat : 48.8566;
-    const longitud = filterPosition && filterPosition.location ? filterPosition.location.lon : 2.3522;
+const GoogleMapComponent = ({ filterPosition, positionActual }) => {
+
+    const latitud = filterPosition && filterPosition.location ? filterPosition.location.lat : positionActual.location.lat;
+    const longitud = filterPosition && filterPosition.location ? filterPosition.location.lon : positionActual.location.lon;
 
     const defaultCenter = { lat: latitud, lng: longitud }; // Centro de París
     const defaultZoom = 12; // Nivel de zoom predeterminado
