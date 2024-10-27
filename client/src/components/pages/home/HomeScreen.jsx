@@ -1,12 +1,16 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
 import Weather from '../../organisms/weather/Weather';
+import './homeScreen.css';
 
 const HomeScreen = () => {
 
     return (
-        <main>
+
+        <main >
             <Weather />
         </main>
+
+
     )
 }
 export default HomeScreen;

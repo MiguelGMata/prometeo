@@ -12,7 +12,7 @@ const WeatherLisCard = ({ forecast }) => {
                         day.map((data, idx) => (
                             <div key={`${index}-${idx}`} className='weather-day-block'>
                                 <p>{data.time.split(" ")[1]}</p>
-                                <h3>{Math.round(data.temp_c + 5)}°</h3>
+                                <h3>{Math.round(data.temp_c + 6)}°</h3>
                                 <Image image={data.condition.icon} />
                                 <p><strong><FaCloudShowersHeavy /> </strong>{data.chance_of_rain}%</p>
                             </div>

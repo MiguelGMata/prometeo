@@ -1,45 +1,60 @@
 .weather {
     width: 100%;
     padding-bottom: 50px;
-    background-color: var(--yellow);
+
 }
 
 .weather-content.sunny {
-    background-image: url('/sunny.gif');
-    background-size: cover;
-    background-position: center;
+    background-image: url('/sol.png');
     background-repeat: no-repeat;
-    transition: background 0.5s ease;
+    animation: moveLeftToRight 500s linear infinite;
 }
 
 .weather-content.cloudy {
-    background-image: url('/Cloudy.gif');
-    background-size: 100% 110%;
-    background-position: center;
-    background-repeat: no-repeat;
-    transition: background 0.5s ease;
+    background-image: url('https://static.vecteezy.com/system/resources/thumbnails/051/101/444/small/one-big-cloud-png.png');
+    background-size: 50% 30%;
+    animation: moveLeftToRight 500s linear infinite;
 }
 
 .weather-content.rainy {
-    background-image: url('/path/to/rainy.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    transition: background 0.5s ease;
+    background-image: url('https://cdn.pixabay.com/animation/2023/09/22/11/32/11-32-56-671_512.gif');
 }
 
 .weather-content.snowy {
-    background-image: url('/path/to/snowy.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    transition: background 0.5s ease;
+    background-image: url('https://img1.picmix.com/output/stamp/thumb/8/4/6/4/1094648_53964.gif');
 }
 
 .weather-content.stormy {
-    background-image: url('/path/to/stormy.jpg');
+    background-image:
+        url('https://i.gifer.com/2ii5.gif'),
+        url('https://i.pinimg.com/originals/c1/23/57/c12357cbba7f5a6096344f5476c5bea0.gif');
+    background-size: 20% 20%, 100% 50%;
+}
+
+@keyframes moveLeftToRight {
+    0% {
+        background-position: 0% center;
+    }
+
+    50% {
+        background-position: 100% center;
+    }
+
+    100% {
+        background-position: 0% center;
+    }
+}
+
+.day-background {
+
+    background-image: url('https://media.istockphoto.com/id/1092474422/fr/photo/ciel-bleu-fond-de-ciel.jpg?s=612x612&w=0&k=20&c=BzbOydtPBDRuQ9zenDYdLUQETUupsGXNm3ejDZiMV_0=');
     background-size: cover;
-    background-position: center;
     background-repeat: no-repeat;
-    transition: background 0.5s ease;
+    background-position: center;
+}
+
+.night-background {
+    background-image: url('https://cdn.pixabay.com/animation/2023/03/19/02/34/02-34-11-741_512.gif');
+    background-position: center;
+
 }

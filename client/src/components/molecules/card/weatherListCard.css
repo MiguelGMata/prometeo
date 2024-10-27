@@ -18,7 +18,7 @@
     display: flex;
     flex-wrap: nowrap;
     padding: 10px;
-    background-color: var(--yellow);
+    /* background-color: var(--yellow);*/
 }
 
 .weather-day-block {

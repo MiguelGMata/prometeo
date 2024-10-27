@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { weatherGet } from '../../services/axios';
 import WeatherCard from '../card/WeatherCard';
 import './weatherReport.css';
 

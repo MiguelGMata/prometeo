@@ -30,6 +30,17 @@ const Weather = () => {
     const [currentLocation, setCurrentLocation] = useState(null);
     const [cityName, setCityName] = useState('');
     const [error, setError] = useState(null);
+    const [isDayTime, setIsDayTime] = useState(true);
+
+    useEffect(() => {
+        const hour = new Date().getHours();
+        // Considera que de 6 AM a 6 PM es de día, de lo contrario, es de noche
+        if (hour >= 6 && hour < 18) {
+            setIsDayTime(true);
+        } else {
+            setIsDayTime(false);
+        }
+    }, []);
 
     useEffect(() => {
         navigator.geolocation.getCurrentPosition(
@@ -84,22 +95,19 @@ const Weather = () => {
     const weatherClass = getWeatherClass(weatherData?.current?.condition?.text);
 
     return (
-        <div className='weather'>
+        <div className={isDayTime ? 'day-background' : 'night-background'}>
             {error ? (
                 <p className="error-message">{error}</p>
             ) : currentLocation ? (
                 <>
                     {weatherData ? (
-                        <>
-                            <div className={`weather-content ${weatherClass}`}>
-                                <WeatherReport position={cityName} weatData={weatherData} />
-                                <WeatherDayList position={cityName} weatData={weatherData} />
-                                <WeatherDayWeek position={cityName} weatData={weatherData} />
-
-                            </div>
+                        <div className={`weather-content ${weatherClass}`}>
+                            <div class="sun"></div>
+                            <WeatherReport position={cityName} weatData={weatherData} />
+                            <WeatherDayList position={cityName} weatData={weatherData} />
+                            <WeatherDayWeek position={cityName} weatData={weatherData} />
                             <WeatherSearch position={cityName} weatData={weatherData} />
-
-                        </>
+                        </div>
                     ) : (
                         <p className="loading-message">Chargement des données météo...</p>
                     )}

@@ -24,8 +24,8 @@ const WeatherCardWeek = ({ weatData, translatedCondition }) => {
                             </div>
                             <div className='weatherCardWeek-week-day'>
                                 <li><Image image={week.day.condition.icon} /></li>
-                                <li><FaArrowDown /> {Math.round(week.day.mintemp_c + 5)}°</li>
-                                <li><FaArrowUp /> {Math.round(week.day.maxtemp_c + 5)}°</li></div>
+                                <li><FaArrowDown /> {Math.round(week.day.mintemp_c + 6)}°</li>
+                                <li><FaArrowUp /> {Math.round(week.day.maxtemp_c + 6)}°</li></div>
                         </ul>
                     )}
                 </div>
