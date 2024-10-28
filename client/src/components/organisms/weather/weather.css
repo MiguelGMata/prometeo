@@ -8,7 +8,7 @@
 }
 
 .weather-content.sunny {
-    background-image: url('/sol.png');
+    background-image: url("");
     background-repeat: no-repeat;
     animation: moveLeftToRight 500s linear infinite;
 }
