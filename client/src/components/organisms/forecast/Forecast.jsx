@@ -1,34 +1,10 @@
 import { useState, useEffect } from 'react';
 import { weatherGet } from '../../services/axios';
-import WeatherDayList from '../../molecules/weather/WeatherDayList';
-import WeatherReport from '../../molecules/weather/WeatherReport';
-import GoogleMap from '../../molecules/map/GoogleMap';
-import WeatherCardWeek from '../../molecules/card/WeatherCardWeek';
-import GoogleMapRain from '../../molecules/map/GoogleMapRain';
-import GoogleMapTemperature from '../../molecules/map/GoogleMapTemperature';
+import WeatherSearch from '../../molecules/weather/WeatherSearch';
 const apiURL = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
-import './weather.css';
+import '../weather/weather.css';
 
-const getWeatherClass = (condition) => {
-    if (!condition) return '';
-
-    const lowerCondition = condition.toLowerCase();
-    if (lowerCondition.includes('sunny') || lowerCondition.includes('clear')) {
-        return 'sunny';
-    } else if (lowerCondition.includes('cloudy') || lowerCondition.includes('overcast') || lowerCondition.includes('fog')) {
-        return 'cloudy';
-    } else if (lowerCondition.includes('rain') || lowerCondition.includes('showers')) {
-        return 'rainy';
-    } else if (lowerCondition.includes('snow') || lowerCondition.includes('sleet')) {
-        return 'snowy';
-    } else if (lowerCondition.includes('storm') || lowerCondition.includes('thunder')) {
-        return 'stormy';
-    } else {
-        return '';
-    }
-};
-
-const Weather = () => {
+const Forecast = () => {
     const [weatherData, setWeatherData] = useState(null);
     const [currentLocation, setCurrentLocation] = useState(null);
     const [cityName, setCityName] = useState('');
@@ -95,7 +71,6 @@ const Weather = () => {
         fetchWeather();
     }, [cityName]);
 
-    const weatherClass = getWeatherClass(weatherData?.current?.condition?.text);
 
     return (
         <div className={isDayTime ? 'day-background' : 'night-background'}>
@@ -104,20 +79,8 @@ const Weather = () => {
             ) : currentLocation ? (
                 <>
                     {weatherData ? (
-                        <div className={`weather-content ${weatherClass}`}>
-                            <WeatherReport position={cityName} weatData={weatherData} />
-                            <WeatherDayList position={cityName} weatData={weatherData} />
-                            <WeatherCardWeek position={cityName} weatData={weatherData} />
-                            <GoogleMap filterPosition={weatherData} positionActual={cityName} />
-                            <div className='google-maps'>
-                                <div className="map-container">
-                                    <GoogleMapTemperature filterPosition={weatherData} positionActual={cityName} />
-                                </div>
-                                <div className="map-container">
-                                    <GoogleMapRain filterPosition={weatherData} positionActual={cityName} />
-                                </div>
-
-                            </div>
+                        <div className="weather-content">
+                            <WeatherSearch position={cityName} weatData={weatherData} />
                         </div>
                     ) : (
                         <p className="loading-message">Chargement des données météo...</p>
@@ -130,4 +93,4 @@ const Weather = () => {
     );
 };
 
-export default Weather;
+export default Forecast;

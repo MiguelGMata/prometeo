@@ -1,15 +1,23 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
 import { FaArrowDown, FaArrowUp } from "react-icons/fa";
 import Image from '../../atoms/image/Image';
 import './weatherCardWeek.css';
 
+const ForecastCardWeek = ({ weatData }) => {
+    const [weatherData, setWeatherData] = useState(null);
 
-const WeatherCardWeek = ({ weatData }) => {
-    const weatherData = weatData.forecast.forecastday;
+    useEffect(() => {
+        if (weatData) {
+            const weatDatas = weatData.forecast.forecastday;
+            setWeatherData(weatDatas);
+        } else {
+            console.log("Vous devrez saisir une ville pour pouvoir voir la prévision...");
+        }
+    }, [weatData]); // Esto hará que la lógica solo se ejecute cuando `weatData` cambie
+
     const capitalizeFirstLetter = (string) => {
         return string.charAt(0).toUpperCase() + string.slice(1);
     };
-
 
     return (
         <div className='weatherCardWeek'>
@@ -24,16 +32,16 @@ const WeatherCardWeek = ({ weatData }) => {
                             <div className='weatherCardWeek-week-day'>
                                 <li><Image image={week.day.condition.icon} /></li>
                                 <li><FaArrowDown /> {Math.round(week.day.mintemp_c)}°</li>
-                                <li><FaArrowUp /> {Math.round(week.day.maxtemp_c)}°</li></div>
+                                <li><FaArrowUp /> {Math.round(week.day.maxtemp_c)}°</li>
+                            </div>
                         </ul>
                     )}
                 </div>
-            )
-                :
-                <p className="loading-message">Chargement des données météo...</p>
-            }
+            ) : (
+                <p className="loading-message">Vous devrez saisir une ville pour pouvoir voir la prévision...</p>
+            )}
         </div>
+    );
+};
 
-    )
-}
-export default WeatherCardWeek;
+export default ForecastCardWeek;

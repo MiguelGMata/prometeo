@@ -2,6 +2,7 @@
     width: 100%;
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
 }
 
@@ -43,6 +44,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-direction: column;
     gap: 20px;
     padding: 20px;
@@ -54,6 +56,11 @@
     font-size: 3rem;
 }
 
+.weatherSearch-content h3,
+.weatherSearch-content p {
+    color: var(--black);
+}
+
 @media(min-width: 768px) {
     .input-container {
         width: 30%;
@@ -61,7 +68,6 @@
 
     .weatherSearch-content {
         align-items: space-between;
-        flex-direction: row;
     }
 
 }

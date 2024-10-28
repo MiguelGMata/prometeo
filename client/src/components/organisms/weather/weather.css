@@ -1,7 +1,10 @@
 .weather {
     width: 100%;
     padding-bottom: 50px;
+}
 
+.weather.content {
+    width: 100%;
 }
 
 .weather-content.sunny {
@@ -59,9 +62,31 @@
 
 }
 
+.google-maps {
+    background-color: var(--white);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    padding: 20px;
+    gap: 20px;
+}
+
+.map-container {
+    flex: 1;
+    min-width: 400px;
+    height: 100%;
+}
+
 @media(max-width: 767px) {
     .weather-content.cloudy {
         background-size: 80% 10%;
 
+    }
+
+    .google-maps {
+        flex-direction: column;
     }
 }

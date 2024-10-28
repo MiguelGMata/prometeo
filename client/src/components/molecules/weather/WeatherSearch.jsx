@@ -4,7 +4,10 @@ import { FaArrowDown, FaArrowUp, FaSearch, FaMapMarkerAlt } from "react-icons/fa
 import Card from '../../atoms/card/Card';
 import Image from '../../atoms/image/Image';
 import GoogleMap from '../map/GoogleMap';
+import ForecastCardWeek from '../../molecules/card/ForecastCardWeek';
+import WeatherDayList from './WeatherDayList';
 import './weatherSearch.css';
+
 
 
 const WeatherReport = ({ position, weatData }) => {
@@ -94,7 +97,10 @@ const WeatherReport = ({ position, weatData }) => {
                     </Card>
 
                 )}
+                < WeatherDayList position={position} weatData={weatherData} />
+                <ForecastCardWeek weatData={weatherData} />
                 <GoogleMap filterPosition={weatherData ? weatherData : filter} positionActual={weatData} />
+
             </div>
         </div>
     )

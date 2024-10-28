@@ -11,7 +11,7 @@ const NavbarLabel = ({ isOpen, activeItem, onClick }) => {
                     <Link to="/">Accueil</Link>
                 </li>
                 <li className={activeItem === 'previsions' ? 'active' : ''} onClick={() => onClick('previsions')}>
-                    <Link to="/previsions">Prévisions</Link>
+                    <Link to="/previsions">Prévisions par ville</Link>
                 </li>
                 <li className={activeItem === 'confiabilite' ? 'active' : ''} onClick={() => onClick('confiabilite')}>
                     <Link to="/confiabilite">Confidentialité</Link>

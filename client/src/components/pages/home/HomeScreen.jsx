@@ -6,7 +6,7 @@ const HomeScreen = () => {
 
     return (
 
-        <main >
+        <main className='home-screen'>
             <Weather />
         </main>
 

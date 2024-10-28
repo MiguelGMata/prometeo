@@ -39,21 +39,24 @@ const GoogleMapComponent = ({ filterPosition, positionActual }) => {
     }, [isLoaded, latitud, longitud]);
 
     return isLoaded ? (
-        <GoogleMap
-            mapContainerStyle={containerStyle}
-            center={defaultCenter}
-            zoom={defaultZoom}
-            onLoad={onLoad}
-            onUnmount={onUnmount}
-        >
-            {markers.map((marker, index) => (
-                <Marker
-                    key={index}
-                    position={{ lat: marker.lat, lng: marker.lng }}
-                    title={marker.title}
-                />
-            ))}
-        </GoogleMap>
+        <div style={{ width: "100%" }}>
+            <h1 style={{ textAlign: 'center', fontFamily: 'arial' }}>Lieux</h1>
+            <GoogleMap
+                mapContainerStyle={containerStyle}
+                center={defaultCenter}
+                zoom={defaultZoom}
+                onLoad={onLoad}
+                onUnmount={onUnmount}
+            >
+                {markers.map((marker, index) => (
+                    <Marker
+                        key={index}
+                        position={{ lat: marker.lat, lng: marker.lng }}
+                        title={marker.title}
+                    />
+                ))}
+            </GoogleMap>
+        </div>
     ) : <></>;
 };
 

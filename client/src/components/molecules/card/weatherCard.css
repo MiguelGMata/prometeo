@@ -13,6 +13,13 @@
 }
 
 
+.weatherCard-content h1,
+.weatherCard-content h2,
+.weatherCard-content h3 {
+    color: var(--white);
+}
+
+
 .weatherCard-content h1 {
     font-size: 2.5rem;
 }
