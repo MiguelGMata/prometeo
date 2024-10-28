@@ -40,7 +40,7 @@ const GoogleMapComponent = ({ filterPosition, positionActual }) => {
 
     return isLoaded ? (
         <div style={{ width: "100%" }}>
-            <h1 style={{ textAlign: 'center', fontFamily: 'arial' }}>Lieux</h1>
+            <h1 style={{ textAlign: 'center', fontFamily: 'arial', color: 'blue' }}>Lieux</h1>
             <GoogleMap
                 mapContainerStyle={containerStyle}
                 center={defaultCenter}
