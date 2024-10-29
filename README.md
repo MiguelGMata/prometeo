@@ -1,7 +1,7 @@
 # Welcome to Prométéo 👋
 <br/>
 <br/>
-Création d’un Site Web Responsive pour une Agence de Voyages.
+Création d’un Site Web de prévisions météorologiques avec ReactJS et API
 
 <a href="https://ik.imagekit.io/"><img src="https://ik.imagekit.io/logoMGM/Prom%C3%A9t%C3%A9o/Prome%CC%81te%CC%81o.png?updatedAt=1730139487256" alt="Shelftons-2" border="0"></a>
 
