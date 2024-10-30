@@ -101,8 +101,8 @@ const GoogleMapComponent = ({ filterPosition, positionActual }) => {
     }, [isLoaded]);
 
     return isLoaded ? (
-        <div>
-            <h1 style={{ textAlign: 'center', fontFamily: 'arial' }}>Prévision météo</h1>
+        <div style={{ width: "100%", backgroundColor: "white", padding: '30px' }}>
+            <h1 style={{ textAlign: 'center', fontFamily: 'arial', color: 'black' }}>Prévision météo</h1>
             <GoogleMap
                 mapContainerStyle={containerStyle}
                 center={defaultCenter}
