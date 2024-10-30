@@ -1,0 +1,47 @@
+.error-template {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-image: url(https://1wpserveur-1278.kxcdn.com/wp-content/uploads/2023/07/13315300_5203299.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+}
+
+
+.error-content {
+  flex: 1;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.error-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #ff6b6b;
+}
+
+.error-content p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.error-content a {
+  text-decoration: none;
+  color: #007bff;
+  font-size: 1rem;
+  border: 2px solid #007bff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.error-content a:hover {
+  background-color: #007bff;
+  color: white;
+}
+@media(min-width:768px) {
+  .error-template {
+    background-size: 30%;
+  }
+}

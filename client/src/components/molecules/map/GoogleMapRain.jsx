@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { GoogleMap, useJsApiLoader, Marker, InfoWindow } from '@react-google-maps/api';
 
 const apiURL = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
-const weatherApiKey = '3842c95291fec5de79b3f9383aa36b78';
+const weatherApiKey = import.meta.env.VITE_WEATHER_API_KEY;
 
 const containerStyle = {
     width: '100%',
