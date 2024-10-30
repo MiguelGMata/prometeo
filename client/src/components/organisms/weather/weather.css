@@ -15,7 +15,7 @@
 
 .weather-content.cloudy {
     background-image: url('https://static.vecteezy.com/system/resources/thumbnails/051/101/444/small/one-big-cloud-png.png');
-    background-size: 50% 30%;
+    background-size: 50% 20%;
     animation: moveLeftToRight 500s linear infinite;
 }
 
