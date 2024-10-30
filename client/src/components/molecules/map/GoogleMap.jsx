@@ -39,7 +39,7 @@ const GoogleMapComponent = ({ filterPosition, positionActual }) => {
     }, [isLoaded, latitud, longitud]);
 
     return isLoaded ? (
-        <div style={{ width: "100%", backgroundColor: "white", padding: '20px' }}>
+        <div style={{ width: "100%", backgroundColor: "white", padding: '50px' }}>
             <h1 style={{ textAlign: 'center', fontFamily: 'arial', color: 'black' }}>Lieux</h1>
             <GoogleMap
                 mapContainerStyle={containerStyle}

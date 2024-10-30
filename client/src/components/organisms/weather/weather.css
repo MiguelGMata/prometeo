@@ -82,7 +82,7 @@
 
 @media(max-width: 767px) {
     .weather-content.cloudy {
-        background-size: 80% 10%;
+        background-size: 60% 5%;
 
     }
 
