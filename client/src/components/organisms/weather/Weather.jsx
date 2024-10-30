@@ -124,7 +124,7 @@ const Weather = () => {
                     )}
                 </>
             ) : (
-                <p className="loading-message">Obtenir l'emplacement actuel...</p>
+                <p className="loading-message">Pour obtenir l'emplacement actuel...</p>
             )}
         </div>
     );
