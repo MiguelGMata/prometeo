@@ -104,7 +104,7 @@
         height: 50vh;
         justify-content: center;
         background-color: var(--blue);
-        top: 20;
+        top: 0;
     }
 
     .submenu {
@@ -127,7 +127,7 @@
         max-width: 300px;
         height: 90%;
         justify-content: center;
-        top: 10;
+        top: 0;
     }
 
     .submenu {
