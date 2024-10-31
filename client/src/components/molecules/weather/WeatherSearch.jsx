@@ -35,6 +35,7 @@ const WeatherReport = ({ position, weatData }) => {
         "Patchy rain nearby": "Pluie éparse à proximité",
         "Patchy light rain": "Pluie légère et éparse",
         "Moderate or heavy rain with thunder": "Pluie modérée ou forte avec tonnerre",
+        "Patchy light drizzle": "Bruine légère et éparse",
     };
     const getTranslatedCondition = (condition) => {
         return translateCondition[condition] || condition;
