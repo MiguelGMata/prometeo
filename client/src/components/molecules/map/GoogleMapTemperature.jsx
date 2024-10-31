@@ -82,7 +82,7 @@ const GoogleMapComponent = () => {
 
     return isLoaded ? (
         <div style={{ width: "100%", backgroundColor: "white", padding: '30px' }}>
-            <h1 style={{ textAlign: 'center', fontFamily: 'arial', color: 'black' }}>Températures par ville</h1>
+            <h1 style={{ textAlign: 'center', fontFamily: 'arial', color: 'black', fontSize: '1.5rem' }}>Températures par ville</h1>
             <GoogleMap
                 mapContainerStyle={containerStyle}
                 center={defaultCenter}
